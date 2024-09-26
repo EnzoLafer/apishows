@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Shows</title>
+  <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  >
+</head>
+
+<body>
+<div class="container">
+  <h1 class="my-4">Shows Disponíveis</h1>
+  <div class="row">
+    <div class="col-md-4" th:each="show : ${shows}">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title" th:text="${show.nome}"></h5>
+          <p class="card-text">
+            Data: <span th:text="${show.data}"></span><br>
+            Artista: <span th:text="${show.artista.nome}"></span><br>
+            Local: <span th:text="${show.local.nome}"></span>
+          </p>
+          <a href="#" class="btn btn-primary">Detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
